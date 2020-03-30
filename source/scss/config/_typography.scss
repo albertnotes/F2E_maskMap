@@ -1,9 +1,13 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC:300,400,500,700,900&display=swap&subset=chinese-traditional');
+
 html, body {
   color: #333333;
+  height: 100%;
+  width: 100%;
+  font-family: 'Noto Sans TC', sans-serif;
 }
 
 $font-size-base: 12px;
-
 $theme-fonts: (
   h1: $font-size-base * 2.5,
   h2: $font-size-base * 2,

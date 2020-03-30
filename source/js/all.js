@@ -218,7 +218,7 @@ const upDataSidebar = (importData) => {
     str += `
     <div class="p-card">
       <div class="h-d-flex h-mb-3 h-align-items-center">
-        <h2 class="h-flex-1">${element.properties.name}</h2>
+        <h3 class="h-flex-1">${element.properties.name}</h3>
         <a class="h1 h-text-primary fas fa-eye h-mr-3" id="path" href="#"
         data-lat = "${element.geometry.coordinates[1]}"
         data-lng = "${element.geometry.coordinates[0]}"

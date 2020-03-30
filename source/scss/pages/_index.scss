@@ -1,28 +1,27 @@
 .p-wrap {
   position: relative;
   overflow: hidden;
+  height: 100%;
+  width: 100%;
 }
 
 // 側邊攔
 .p-sidebar {
   position: absolute;
-  width: 30vw;
+  width: 420px;
   top: 0;
   left: 0;
   bottom: 0;
   z-index: 999;
   transition: all 0.5s;
-  @include respond("ipad") {
-    width: 50vw;
-  }
   // 手機以下預設側邊欄收起來
   @include respond("mobile") {
     transform: translateX(-100%);
-    width: 80vw;
+    width: 350px;
   }
   @include respond("smallMobile") {
     transform: translateX(-100%);
-    width: 90vw;
+    width: 290px;
   }
   &.active {
      // mobile 以下打開 以上收起來
@@ -34,22 +33,17 @@
 }
 // 地圖容器
 .p-map {
-  height: 100vh;
-  max-width: 70vw;
-  transform: translateX(30vw);
+  height: 100%;
+  max-width: calc(100% - 420px);
+  transform: translateX(420px);
   transition: all 0.5s;
   &.active {
     transform: translateX(0);
-    max-width: 100vw;
-  }
-  // 平板扣除側邊攔 - 螢幕比例
-  @include respond("ipad") {
-    max-width: 50vw;
-    transform: translateX(50vw);
+    max-width: 100%;
   }
   @include respond("mobile") {
     transform: translateX(0);
-    max-width: 100vw;
+    max-width: 100%;
   }
 }
 
@@ -122,7 +116,7 @@
   &--map {
     width: 16rem;
     @include respond("mobile") {
-      max-width: 80vw;
+      max-width: 20rem;
     }
   }
   .heading {
