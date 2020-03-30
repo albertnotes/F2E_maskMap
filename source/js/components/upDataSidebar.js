@@ -23,11 +23,11 @@ const upDataSidebar = (importData) => {
         ></a>
         <a class="fas fa-location-arrow" href="https://www.google.com.tw/maps/dir//${element.properties.address}" target="_blank"></a>
       </div>
-      <span class="h4 h-text-dark">${element.properties.address}</span>
+      <span class="h5 h-text-dark">${element.properties.address}</span>
       <br>
-      <span class="h4 h-text-dark">${element.properties.phone}</span>
+      <span class="h5 h-text-dark">${element.properties.phone}</span>
       <br>
-      <span class="h4 h-text-dark">${element.properties.note}</span>
+      <span class="h5 h-text-dark">${element.properties.note}</span>
       <br>
       <div class="h-d-flex h-mt-2">
         <div class="p-badges ${adultStockNoMore}"><span class="h5 h-flex-1">成人口罩</span><span>${element.properties.mask_adult}</span></div>

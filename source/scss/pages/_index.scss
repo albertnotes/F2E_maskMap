@@ -1,24 +1,32 @@
 .p-wrap {
   position: relative;
+  overflow: hidden;
 }
 
 // 側邊攔
 .p-sidebar {
   position: absolute;
-  width: 250px;
-  height: 100vh;
+  width: 30vw;
   top: 0;
   left: 0;
-  z-index: 1;
+  bottom: 0;
+  z-index: 999;
   transition: all 0.5s;
-  // mobile 收起來
+  @include respond("ipad") {
+    width: 50vw;
+  }
+  // 手機以下預設側邊欄收起來
   @include respond("mobile") {
     transform: translateX(-100%);
+    width: 80vw;
   }
-  // desktop 收起來
-  &.active {
+  @include respond("smallMobile") {
     transform: translateX(-100%);
-    // mobile 打開
+    width: 90vw;
+  }
+  &.active {
+     // mobile 以下打開 以上收起來
+    transform: translateX(-100%);
     @include respond("mobile") {
       transform: translateX(0%);
     }
@@ -27,18 +35,21 @@
 // 地圖容器
 .p-map {
   height: 100vh;
-  width: calc(100vw - 250px);
-  transform: translateX(250px);
+  max-width: 70vw;
+  transform: translateX(30vw);
   transition: all 0.5s;
   &.active {
-    width: 100vw;
-    transform: translateX(0px);
+    transform: translateX(0);
+    max-width: 100vw;
   }
-  // mobile 移除 desktop translateX
-  // width 同步 screen width
+  // 平板扣除側邊攔 - 螢幕比例
+  @include respond("ipad") {
+    max-width: 50vw;
+    transform: translateX(50vw);
+  }
   @include respond("mobile") {
-    transform: translateX(0px);
-    width: 100vw;
+    transform: translateX(0);
+    max-width: 100vw;
   }
 }
 
@@ -50,6 +61,10 @@
   .p-select {
     height: 31px;
     flex: 1;
+    font-size: 1rem;
+    @include respond("mobile") {
+      font-size: .875rem;
+    }
     background-color: #fff;
     border: none;
     padding: 0px 10px;
@@ -67,6 +82,10 @@
 .c-shrinkIcon {
   position: relative;
   &__input {
+    font-size: 1rem;
+    @include respond("mobile") {
+      font-size: .875rem;
+    }
     height: 31px;
     width: 100%;
     background-color: #fff;
@@ -100,7 +119,24 @@
   }
 }
 .p-card {
-  min-width: 12.5rem;
+  &--map {
+    width: 16rem;
+    @include respond("mobile") {
+      max-width: 80vw;
+    }
+  }
+  .heading {
+    font-size: 18px;
+    @include respond("mobile") {
+      min-width: 16px;
+    }
+  }
+  .textContent {
+    font-size: 14px;
+    @include respond("mobile") {
+      min-width: 12px;
+    }
+  }
   & a {
     color: map-get($theme-colors, primary);
     font-size: 1.5rem;
@@ -122,11 +158,4 @@
       margin-left: 1rem;
     }
   }
-}
-
-.p-locateBtn {
-  position: absolute;
-  top: 5rem;
-  right: 0.55rem;
-  z-index: 9999;
 }

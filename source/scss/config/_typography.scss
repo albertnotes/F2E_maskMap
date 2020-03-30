@@ -1,20 +1,33 @@
-body {
-  font-size: 1rem;
+html, body {
   color: #333333;
 }
 
-$fontSize: (
-  h1: 1.8125rem,
-  h2: 1.1875rem,
-  h3: 0.875rem,
-  h4: 0.75rem,
-  h5: 0.625rem,
-  h6: 0.5rem
+$font-size-base: 12px;
+
+$theme-fonts: (
+  h1: $font-size-base * 2.5,
+  h2: $font-size-base * 2,
+  h3: $font-size-base * 1.75,
+  h4: $font-size-base * 1.5,
+  h5: $font-size-base * 1.25,
+  h6: $font-size-base,
 );
 
-@each $name, $value in $fontSize {
+$font-small-size:(
+  small-text-1: 10px,
+  small-text-2: 8px,
+);
+
+@each $name, $value in $theme-fonts {
   .#{$name},
   #{$name} {
     font-size: $value;
   }
 }
+
+@each $name, $value in $font-small-size {
+  .#{$name} {
+    font-size: $value;
+  }
+}
+

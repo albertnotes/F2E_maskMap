@@ -82,19 +82,19 @@ const addMarker = (importData) => {
       L.marker([geometry.coordinates[1], geometry.coordinates[0]], {
         icon: iconColor,
       }).bindPopup(`
-  <div class="p-card" style="max-width: 200px">
+  <div class="p-card p-card--map">
     <div class="h-d-flex h-mb-3 h-align-items-center">
-      <h2 class="h-flex-1">${properties.name}</h2>
+      <h2 class="heading h-flex-1">${properties.name}</h2>
       <a class="fas fa-location-arrow h-mr-3" href="https://www.google.com.tw/maps/dir//${properties.address}" target="_blank"></a>
     </div>
-    <span class="h4 h-text-dark">${properties.address}</span>
+    <span class="textContent h-text-dark">${properties.address}</span>
     <br>
-    <span class="h4 h-text-dark">${properties.phone}</span>
+    <span class="textContent h-text-dark">${properties.phone}</span>
     <br>
-    <span class="h4 h-text-dark">${properties.note}</span>
+    <span class="textContent h-text-dark">${properties.note}</span>
     <div class="h-d-flex h-mt-2">
-      <div class="p-badges ${adultStockNoMore}"><span class="h5 h-flex-1">成人口罩</span><span>${properties.mask_adult}</span></div>
-      <div class="p-badges ${childStockNoMore}"><span class="h5 h-flex-1">兒童口罩</span><span>${properties.mask_child}</span></div>
+      <div class="p-badges ${adultStockNoMore}"><span class="textContent h-flex-1">成人口罩</span><span>${properties.mask_adult}</span></div>
+      <div class="p-badges ${childStockNoMore}"><span class="textContent h-flex-1">兒童口罩</span><span>${properties.mask_child}</span></div>
     </div>
   </div>
   `),
@@ -225,11 +225,11 @@ const upDataSidebar = (importData) => {
         ></a>
         <a class="fas fa-location-arrow" href="https://www.google.com.tw/maps/dir//${element.properties.address}" target="_blank"></a>
       </div>
-      <span class="h4 h-text-dark">${element.properties.address}</span>
+      <span class="h5 h-text-dark">${element.properties.address}</span>
       <br>
-      <span class="h4 h-text-dark">${element.properties.phone}</span>
+      <span class="h5 h-text-dark">${element.properties.phone}</span>
       <br>
-      <span class="h4 h-text-dark">${element.properties.note}</span>
+      <span class="h5 h-text-dark">${element.properties.note}</span>
       <br>
       <div class="h-d-flex h-mt-2">
         <div class="p-badges ${adultStockNoMore}"><span class="h5 h-flex-1">成人口罩</span><span>${element.properties.mask_adult}</span></div>
