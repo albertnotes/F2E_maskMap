@@ -1,0 +1,125 @@
+// 配色
+$theme-colors: (
+  primary: #73c0d8,
+  secondary: #ffa573,
+  info: #a5a5a5,
+  notice: #faf900,
+  light: #f8f9fa,
+  dark: #666666,
+  white: #fff,
+);
+
+// 間距
+$spacing: (
+  0: 0rem,
+  1: 0.25rem,
+  2: 0.5rem,
+  3: 0.75rem,
+  4: 0.875rem,
+  5: 1rem,
+);
+
+// media queries width 設為變數
+$breakpoints: (
+  'smallMobile': 576px,
+  'mobile': 767px,
+  'ipad': 992px,
+  'desktop': 1200px,
+) !default;
+
+@mixin respond($breakpoint) {
+  // If the key exists in the map
+  @if map-has-key($breakpoints, $breakpoint) {
+    // Prints a media query based on the value
+    @media (max-width: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  }
+
+  // If the key doesn't exist in the map
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Available breakpoints are: #{map-keys($breakpoints)}.";
+  }
+}
+
+@each $name, $value in $theme-colors {
+  .h-bg-#{'' + $name} {
+    background-color: $value;
+  }
+  .h-text-#{'' + $name} {
+    color: $value;
+  }
+}
+
+@each $name, $value in $spacing {
+  .h-ml-#{$name} {
+    margin-left: $value;
+  }
+  .h-mr-#{$name} {
+    margin-right: $value;
+  }
+  .h-mt-#{$name} {
+    margin-top: $value;
+  }
+  .h-mb-#{$name} {
+    margin-bottom: $value;
+  }
+  .h-my-#{$name} {
+    margin-top: $value;
+    margin-bottom: $value;
+  }
+  .h-mx-#{$name} {
+    margin-left: $value;
+    margin-right: $value;
+  }
+  .h-m-#{$name} {
+    margin-left: $value;
+    margin-right: $value;
+    margin-top: $value;
+    margin-bottom: $value;
+  }
+  .h-pl-#{$name} {
+    padding-left: $value;
+  }
+  .h-pr-#{$name} {
+    padding-right: $value;
+  }
+  .h-pt-#{$name} {
+    padding-top: $value;
+  }
+  .h-pb-#{$name} {
+    padding-bottom: $value;
+  }
+  .h-py-#{$name} {
+    padding-top: $value;
+    padding-bottom: $value;
+  }
+  .h-px-#{$name} {
+    padding-left: $value;
+    padding-right: $value;
+  }
+  .h-p-#{$name} {
+    padding-left: $value;
+    padding-right: $value;
+    padding-top: $value;
+    padding-bottom: $value;
+  }
+}
+
+.h-mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.h-text {
+  &-center {
+    text-align: center;
+  }
+  &-left {
+    text-align: left;
+  }
+  &-right {
+    text-align: right;
+  }
+}

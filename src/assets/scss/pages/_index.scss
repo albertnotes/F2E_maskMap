@@ -1,0 +1,153 @@
+.p-wrap {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+}
+
+// 側邊攔
+.p-sidebar {
+  position: absolute;
+  width: 420px;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 999;
+  transition: all 0.5s;
+  // 手機以下預設側邊欄收起來
+  @include respond('mobile') {
+    transform: translateX(-100%);
+    width: 350px;
+  }
+  @include respond('smallMobile') {
+    transform: translateX(-100%);
+    width: 290px;
+  }
+  &.active {
+    // mobile 以下打開 以上收起來
+    transform: translateX(-100%);
+    @include respond('mobile') {
+      transform: translateX(0%);
+    }
+  }
+}
+// 地圖容器
+.p-map {
+  height: 100%;
+  max-width: calc(100% - 420px);
+  transform: translateX(420px);
+  transition: all 0.5s;
+  &.active {
+    transform: translateX(0);
+    max-width: 100%;
+  }
+  @include respond('mobile') {
+    transform: translateX(0);
+    max-width: 100%;
+  }
+}
+
+.p-nav {
+  position: sticky;
+  background-color: map-get($theme-colors, primary);
+  padding: 0.46875rem 0.59375rem;
+  color: #fff;
+  .p-select {
+    height: 31px;
+    flex: 1;
+    font-size: 1rem;
+    @include respond('mobile') {
+      font-size: 0.875rem;
+    }
+    border: none;
+    padding: 0px 15px;
+    border-radius: 20px;
+    appearance: none;
+    background: #fff url('../images/black_18dp.png') no-repeat 95% center;
+    background-size: 24px;
+    & + .p-select {
+      margin-left: 0.5rem;
+    }
+  }
+}
+
+.c-shrinkIcon {
+  position: relative;
+  &__input {
+    font-size: 1rem;
+    @include respond('mobile') {
+      font-size: 0.875rem;
+    }
+    height: 31px;
+    width: 100%;
+    background-color: #fff;
+    border: none;
+    padding-left: 10px;
+    padding-right: 35px;
+    border-radius: 20px;
+  }
+  &__icon {
+    position: absolute;
+    top: 0;
+    right: 5px;
+    font-size: 1.2rem;
+    color: map-get($theme-colors, info);
+    width: 30px;
+    padding: 5.9px 0px;
+    text-align: center;
+  }
+}
+
+.p-sideContent {
+  height: calc(100% - 123px);
+  overflow-y: auto;
+  background-color: #fff;
+  & > .p-card {
+    padding-top: 0.9375rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    padding-bottom: 0.9375rem;
+    border-bottom: 1px solid #d9d9d9;
+  }
+}
+.p-card {
+  &--map {
+    width: 16rem;
+    @include respond('mobile') {
+      max-width: 20rem;
+    }
+  }
+  .heading {
+    font-size: 18px;
+    @include respond('mobile') {
+      min-width: 16px;
+    }
+  }
+  .textContent {
+    font-size: 14px;
+    @include respond('mobile') {
+      min-width: 12px;
+    }
+  }
+  & a {
+    color: map-get($theme-colors, primary);
+    font-size: 1.5rem;
+    &:hover {
+      color: map-get($theme-colors, secondary);
+    }
+  }
+  .p-badges {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    border-radius: 20px;
+    color: white;
+    padding: 0.34375rem 0.75rem;
+    & > span:last-child {
+      font-weight: bold;
+    }
+    & + .p-badges {
+      margin-left: 1rem;
+    }
+  }
+}

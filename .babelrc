@@ -1,4 +1,10 @@
 {
-  "presets": ["@babel/preset-env"],
-  "retainLines": true
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "modules": false
+      }
+    ]
+  ]
 }

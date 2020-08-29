@@ -1,6 +1,3 @@
-/gulpfile.js/*.js
-/source/js/components/*.js
-/source/js/controller/*.js
-/source/js/data/*.js
-/source/js/utils/*.js
-/public/*
+dist/*.js
+postcss.config.js
+.babelrc

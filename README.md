@@ -28,20 +28,17 @@ https://albertnotes.github.io/F2E_maskMap/
 ## 安裝與運行
 
 ```
-# node 版本 v12.15.0
-# gulp 版本 4.0.2
 
-# 安裝 gulp
-npm install gulp-cli -g
+# 安裝 parcel
+npm install -g parcel-bundler
 
 # 執行
 npm install
-gulp
+npm run start
 
 # 其他指令
-gulp build # 生成靜態網頁（未壓縮）預設 --env development 可省略
-gulp build --env production # 生成靜態網頁（壓縮 CSS）
-gulp deploy # 將靜態網頁佈署到 gh-pages
+npm run build 生成 dist
+npm run clean 清除 快取 與 dist
 ```
 
 ## 聲明
