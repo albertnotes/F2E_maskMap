@@ -23,7 +23,7 @@ https://albertnotes.github.io/F2E_maskMap/
 - leaflet Locate 套件
 - pug
 - scss
-- gulp
+- Parcel.js
 
 ## 安裝與運行
 
