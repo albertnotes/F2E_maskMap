@@ -94,6 +94,9 @@ const clickBar = (e) => {
   }
 };
 
+/**
+ * 掛載監聽函式
+ */
 export default function onEvent() {
   dom.county.addEventListener('change', changeCounty);
   dom.countyTown.addEventListener('change', changeTown);

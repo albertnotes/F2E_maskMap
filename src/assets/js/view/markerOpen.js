@@ -1,3 +1,10 @@
+/**
+ * 傳入經緯度調用 MarkerClusterGroup 套件的 zoomToShowLayer
+ * 打開相符的 markers
+ * @param {*} lat 緯度
+ * @param {*} lng 經度
+ * @param {*} markers L.MarkerClusterGroup 物件，用於 markers 群組
+ */
 export default function markerOpen(lat, lng, markers) {
   // 搜尋 markers 圖層下的子圖層
   markers.eachLayer((layer) => {

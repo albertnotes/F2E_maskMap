@@ -1,3 +1,6 @@
+/**
+ * 取得藥局資料的 API
+ */
 export default async function getPharmacyData() {
   try {
     const res = await fetch(

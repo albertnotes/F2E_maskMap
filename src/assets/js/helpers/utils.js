@@ -1,5 +1,8 @@
 import jsonData from '../data/CityCountyData.json';
 
+/**
+ * 重覆使用的 DOM 節點
+ */
 export const dom = {
   county: document.querySelector('#county'),
   countyTown: document.querySelector('#countyTown'),
@@ -8,6 +11,9 @@ export const dom = {
   search: document.querySelector('#search'),
 };
 
+/**
+ * 重覆使用的 Model 變數
+ */
 export default {
   pharmacyData: '',
   area: jsonData,

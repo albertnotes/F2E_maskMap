@@ -1,3 +1,6 @@
+/**
+ * 取得星期、身分證號渲染於 #week #idCard
+ */
 export default function getWeekAndIdCard() {
   // DOM
   const week = document.querySelector('#week');

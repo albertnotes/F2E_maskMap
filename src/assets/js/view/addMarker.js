@@ -1,5 +1,11 @@
 import maskColor from '../helpers/function';
 
+/**
+ *
+ * @param {*} importData 藥局資料 Array [{ }, { }, ...]
+ * @param {*} markers L.MarkerClusterGroup 物件，用於 markers 群組
+ * @param {*} map Leaflet 底圖
+ */
 export default function addMarker(importData, markers, map) {
   importData.forEach((element) => {
     // 解構賦值寫法，宣告要從來源變數(element)接收解開的值之變數。

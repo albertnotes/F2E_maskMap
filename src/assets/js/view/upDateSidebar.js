@@ -2,6 +2,11 @@ import { dom } from '../helpers/utils';
 import getDate from './getDate';
 import getWeekAndIdCard from './getWeekAndIdCard';
 
+/**
+ * 渲染 HTML #sideData
+ * 執行 getDate、getWeekAndIdCard 函式
+ * @param {*} importData 篩選有當前選擇縣市的藥局資料 [{ }, { }, ...]
+ */
 export default function upDateSidebar(importData) {
   let str = '';
   importData.forEach((element) => {

@@ -39,6 +39,9 @@ npm run start
 # 其他指令
 npm run build 生成 dist
 npm run clean 清除 快取 與 dist
+
+# 部屬 修改根目錄與專案資料夾相隔的資料夾
+parcel build src/index.pug --public-url /F2E_maskMap/
 ```
 
 ## 聲明

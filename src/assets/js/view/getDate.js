@@ -1,3 +1,6 @@
+/**
+ * 取得日期渲染於 #date
+ */
 export default function getDate() {
   // DOM
   const date = document.querySelector('#date');

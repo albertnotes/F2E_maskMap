@@ -14,7 +14,7 @@ import onEvent from './controller/onEvent';
   const areaData = utils.area.filter(
     (element) => element.CityName === '臺北市',
   );
-  // 篩選有符合縣市的藥局資料
+  // 篩選有當前選擇縣市的藥局資料
   const pharmacyData = utils.pharmacyData.filter(
     (element) => element.properties.address.match('臺北市'),
   );

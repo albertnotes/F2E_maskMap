@@ -1,3 +1,9 @@
+/**
+ * 依參數數量 return 對應 L.Icon 物件配置
+ * @param {*} adult 成人數量
+ * @param {*} child 小孩數量
+ * @returns {*} L.Icon 物件
+ */
 export default function maskColor(adult, child) {
   if (adult > 0 && child > 0) {
     return new L.Icon({
