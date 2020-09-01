@@ -9,7 +9,7 @@
   "scripts": {
     "clean": "rimraf .cache dist",
     "start": "npm run clean && parcel src/index.pug",
-    "build": "npm run clean && parcel build src/index.pug",
+    "build": "npm run clean && parcel build src/index.pug --public-url /F2E_maskMap/",
     "lint": "eslint --fix --ext .js,.jsx ."
   },
   "dependencies": {},
