@@ -50,4 +50,4 @@ parcel build src/index.pug --public-url /F2E_maskMap/
 
 ## 筆記
 
-- 本次專案過程收錄在 https://albertnotes.github.io/category/20200226/1536962204/ 
+- 本次專案過程收錄在 https://albertnotes.github.io/blog/javascript/2020/02/01/f2e-mask
